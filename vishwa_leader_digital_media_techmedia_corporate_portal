@@ -726,171 +726,53 @@
                             Foundation</span>
                     </div>
                 </div>
-            </div>
-        </div>
     </section>
 
-    <!-- Section: Identity Disambiguation (Interactive Tab-Pills Compliance Desk) -->
+    <!-- Section: Legal Compliance Desk (Official Verified Profile) -->
     <section id="compliance" class="py-20 md:py-28 bg-zinc-50 border-b border-zinc-200">
         <div class="max-w-7xl mx-auto px-6">
             <div class="max-w-3xl mx-auto text-center mb-12 space-y-4">
                 <span class="text-xs font-bold tracking-widest text-brandBlue uppercase">Compliance Desk</span>
-                <h2 class="text-3xl md:text-4xl font-black tracking-tight text-zinc-900">Disambiguation of Personal & Legal Identities</h2>
-                <p class="text-zinc-500 leading-relaxed font-normal">
-                    To maintain accuracy in public records, it is necessary to separate Shirish Bhageshwar Ramteke of Mumbai from other individuals with the same or similar names in regional databases.
+                <h2 class="text-3xl md:text-4xl font-black tracking-tight text-zinc-900">Verified Legal & Leadership Identity</h2>
+                <p class="text-zinc-500 leading-relaxed font-normal font-sans">
+                    Official registration, corporate credentials, and verified leadership profiles associated with the Vishwa Leader publishing house and corporate operations.
                 </p>
             </div>
 
-            <!-- Segment Switcher Buttons -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-2 mb-8 bg-zinc-200/60 p-1.5 rounded-lg max-w-3xl mx-auto">
-                <button onclick="selectProfile('director')" id="btn-director"
-                    class="w-full text-xs font-bold uppercase tracking-wider py-3 px-4 rounded text-center transition-all bg-white text-zinc-900 shadow-sm">
-                    Shirish Bhageshwar Ramteke
-                </button>
-                <button onclick="selectProfile('financial')" id="btn-financial"
-                    class="w-full text-xs font-bold uppercase tracking-wider py-3 px-4 rounded text-center transition-all text-zinc-500 hover:text-zinc-900">
-                    Shirish B. Ramteke
-                </button>
-                <button onclick="selectProfile('municipal')" id="btn-municipal"
-                    class="w-full text-xs font-bold uppercase tracking-wider py-3 px-4 rounded text-center transition-all text-zinc-500 hover:text-zinc-900">
-                    Shirish Ramteke (Municipal)
-                </button>
-            </div>
-
             <!-- Profile Info Display Card -->
-            <div id="profileCard"
-                class="border border-zinc-200 bg-white rounded p-8 shadow-sm relative overflow-hidden max-w-4xl mx-auto transition-all duration-150 ease-in-out">
+            <div class="border border-zinc-200 bg-white rounded-lg p-8 md:p-10 shadow-sm relative overflow-hidden max-w-4xl mx-auto">
                 <!-- Decorative Top Border Badge -->
-                <div id="profileBadge"
-                    class="absolute top-0 right-0 bg-brandBlue text-white text-[9px] font-extrabold uppercase tracking-widest px-3 py-1">
-                    Primary Subject
+                <div class="absolute top-0 right-0 bg-brandBlue text-white text-[9px] font-extrabold uppercase tracking-widest px-3 py-1">
+                    Verified Director & Publisher
                 </div>
 
                 <div class="space-y-6">
-                    <div>
-                        <span class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Full Legal
-                            Identity</span>
-                        <h4 id="profileName"
-                            class="text-xl font-extrabold text-zinc-900 mt-0.5 uppercase tracking-tight">Shirish
-                            Bhageshwar Ramteke</h4>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-full bg-brandBlue/5 text-brandBlue flex items-center justify-center border border-brandBlue/10">
+                            <i class="fa-solid fa-user-check text-lg"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest block">Full Legal Identity</span>
+                            <h4 class="text-xl md:text-2xl font-extrabold text-zinc-900 uppercase tracking-tight">Shirish Bhageshwar Ramteke</h4>
+                        </div>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 border-y border-zinc-200 py-6 text-xs">
                         <div>
-                            <span class="text-zinc-400 font-bold uppercase tracking-wider">Primary Region</span>
-                            <p id="profileRegion" class="font-semibold text-zinc-800 mt-1">Mumbai Suburban, Maharashtra
-                            </p>
+                            <span class="text-zinc-400 font-bold uppercase tracking-wider block mb-1">Primary Region</span>
+                            <p class="font-semibold text-zinc-800 text-sm">Mumbai Suburban District, Maharashtra</p>
                         </div>
                         <div>
-                            <span class="text-zinc-400 font-bold uppercase tracking-wider">Institutional
-                                Affiliations</span>
-                            <p id="profileAffiliation" class="font-semibold text-zinc-800 mt-1">Vishwa Leader Techmedia
-                                Pvt. Ltd., Sanghakaya Foundation</p>
+                            <span class="text-zinc-400 font-bold uppercase tracking-wider block mb-1">Institutional Affiliations</span>
+                            <p class="font-semibold text-zinc-800 text-sm">Vishwa Leader Techmedia Pvt. Ltd., Sanghakaya Foundation</p>
                         </div>
                     </div>
 
                     <div>
-                        <span class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Legal /
-                            Administrative Role</span>
-                        <p id="profileRole" class="text-xs text-zinc-600 leading-relaxed mt-2 font-normal">
-                            Director of Vishwa Leader Techmedia Private Limited (DIN: 07427260) and publisher of the
-                            registered print magazine. Directs the global media operations, international
-                            collaborations, and the World Leader Ambedkar International Award program in London.
+                        <span class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest block mb-1">Legal / Administrative Role</span>
+                        <p class="text-xs md:text-sm text-zinc-600 leading-relaxed font-normal">
+                            Director of Vishwa Leader Techmedia Private Limited (DIN: 07427260) and publisher of the registered print magazine. Directs the global media operations, international collaborations, and the World Leader Ambedkar International Award program in London.
                         </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Matrix Table below for easy reference -->
-            <div class="mt-12 max-w-4xl mx-auto">
-                <h3 class="text-sm font-bold uppercase tracking-widest text-zinc-400 mb-6 text-center">Comparative Identity Delineation Matrix</h3>
-                
-                <!-- Desktop version (Visible on PC) -->
-                <div class="hidden md:block overflow-x-auto border border-zinc-200 rounded-lg bg-white shadow-sm">
-                    <table class="min-w-full divide-y divide-zinc-200 text-left text-xs">
-                        <thead class="bg-zinc-50 font-bold uppercase tracking-wider text-zinc-600">
-                            <tr>
-                                <th class="px-6 py-4">Identity Profile</th>
-                                <th class="px-6 py-4">Primary Region</th>
-                                <th class="px-6 py-4">Institutional Affiliation</th>
-                                <th class="px-6 py-4">Legal/Administrative Role</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-zinc-200 text-zinc-600">
-                            <tr class="hover:bg-zinc-50 transition-colors">
-                                <td class="px-6 py-4 font-bold text-zinc-900">Shirish Bhageshwar Ramteke</td>
-                                <td class="px-6 py-4">Mumbai Suburban</td>
-                                <td class="px-6 py-4">Vishwa Leader Techmedia Pvt. Ltd., Sanghakaya Foundation</td>
-                                <td class="px-6 py-4">Publisher, Director, Media Coordinator, and International Event Organizer</td>
-                            </tr>
-                            <tr class="hover:bg-zinc-50 transition-colors">
-                                <td class="px-6 py-4 font-bold text-zinc-900">Shirish B. Ramteke</td>
-                                <td class="px-6 py-4">Nagpur (Suyog Nagar)</td>
-                                <td class="px-6 py-4">S. M. Dhole Financial Services</td>
-                                <td class="px-6 py-4">Financial Agent specializing in livestock, transit, property, and agricultural insurance</td>
-                            </tr>
-                            <tr class="hover:bg-zinc-50 transition-colors">
-                                <td class="px-6 py-4 font-bold text-zinc-900">Shirish Ramteke (Municipal)</td>
-                                <td class="px-6 py-4">Nagpur / Wardha</td>
-                                <td class="px-6 py-4">Nagpur Municipal Corporation / Standing Committee</td>
-                                <td class="px-6 py-4">Government employee involved in a precedent-setting pension dispute (Resolution No. 225 of 2011)</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- Mobile version (Visible on Mobile devices) -->
-                <div class="block md:hidden space-y-4">
-                    <!-- Profile 1 -->
-                    <div class="bg-white border border-zinc-200 rounded p-5 space-y-3 shadow-sm">
-                        <div class="flex justify-between items-center border-b border-zinc-100 pb-2">
-                            <span class="font-extrabold text-zinc-900 text-xs uppercase">Shirish Bhageshwar Ramteke</span>
-                            <span class="text-[9px] font-bold text-brandBlue bg-brandBlue/5 px-2 py-0.5 rounded uppercase">Mumbai Suburban</span>
-                        </div>
-                        <div class="space-y-2 text-xs">
-                            <div>
-                                <span class="text-zinc-400 font-bold uppercase tracking-wider text-[9px]">Institutional Affiliation</span>
-                                <p class="font-medium text-zinc-800">Vishwa Leader Techmedia Pvt. Ltd., Sanghakaya Foundation</p>
-                            </div>
-                            <div>
-                                <span class="text-zinc-400 font-bold uppercase tracking-wider text-[9px]">Legal/Administrative Role</span>
-                                <p class="text-zinc-600 leading-relaxed font-normal">Publisher, Director, Media Coordinator, and International Event Organizer</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Profile 2 -->
-                    <div class="bg-white border border-zinc-200 rounded p-5 space-y-3 shadow-sm">
-                        <div class="flex justify-between items-center border-b border-zinc-100 pb-2">
-                            <span class="font-extrabold text-zinc-900 text-xs uppercase font-sans">Shirish B. Ramteke</span>
-                            <span class="text-[9px] font-bold text-zinc-500 bg-zinc-100 px-2 py-0.5 rounded uppercase font-sans">Nagpur (Suyog Nagar)</span>
-                        </div>
-                        <div class="space-y-2 text-xs">
-                            <div>
-                                <span class="text-zinc-400 font-bold uppercase tracking-wider text-[9px]">Institutional Affiliation</span>
-                                <p class="font-medium text-zinc-800 font-sans">S. M. Dhole Financial Services</p>
-                            </div>
-                            <div>
-                                <span class="text-zinc-400 font-bold uppercase tracking-wider text-[9px]">Legal/Administrative Role</span>
-                                <p class="text-zinc-600 leading-relaxed font-normal font-sans">Financial Agent specializing in livestock, transit, property, and agricultural insurance</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Profile 3 -->
-                    <div class="bg-white border border-zinc-200 rounded p-5 space-y-3 shadow-sm">
-                        <div class="flex justify-between items-center border-b border-zinc-100 pb-2">
-                            <span class="font-extrabold text-zinc-900 text-xs uppercase font-sans">Shirish Ramteke (Municipal)</span>
-                            <span class="text-[9px] font-bold text-zinc-500 bg-zinc-100 px-2 py-0.5 rounded uppercase font-sans">Nagpur / Wardha</span>
-                        </div>
-                        <div class="space-y-2 text-xs">
-                            <div>
-                                <span class="text-zinc-400 font-bold uppercase tracking-wider text-[9px]">Institutional Affiliation</span>
-                                <p class="font-medium text-zinc-800 font-sans font-normal">Nagpur Municipal Corporation / Standing Committee</p>
-                            </div>
-                            <div>
-                                <span class="text-zinc-400 font-bold uppercase tracking-wider text-[9px]">Legal/Administrative Role</span>
-                                <p class="text-zinc-600 leading-relaxed font-normal font-sans">Government employee involved in a precedent-setting pension dispute (Resolution No. 225 of 2011)</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1089,67 +971,6 @@
             }
         });
 
-        // Compliance Desk Identity Switcher Data
-        const registryData = {
-            director: {
-                name: "Shirish Bhageshwar Ramteke",
-                region: "Mumbai Suburban District, Maharashtra",
-                affiliation: "Vishwa Leader Techmedia Pvt. Ltd., Sanghakaya Foundation",
-                badge: "Primary Subject",
-                badgeClass: "bg-brandBlue text-white",
-                desc: "Director of Vishwa Leader Techmedia Private Limited (DIN: 07427260) and publisher of the registered print magazine. Directs the global media operations, international collaborations, and the World Leader Ambedkar International Award program in London."
-            },
-            financial: {
-                name: "Shirish B. Ramteke",
-                region: "Ring Road, Suyog Nagar, Nagpur",
-                affiliation: "S. M. Dhole Financial Services",
-                badge: "Distinct Commercial Entity",
-                badgeClass: "bg-zinc-500 text-white",
-                desc: "Operates an independent financial and insurance agency in Nagpur, specializing in livestock, agricultural, transit, and property insurance. Has no association with Vishwa Leader Techmedia or the Sanghakaya Foundation."
-            },
-            municipal: {
-                name: "Shirish Ramteke (Municipal)",
-                region: "Nagpur / Wardha Districts",
-                affiliation: "Nagpur Municipal Corporation (Standing Committee)",
-                badge: "Administrative Precedent",
-                badgeClass: "bg-zinc-700 text-white",
-                desc: "Referenced within precedent-setting administrative pension litigation (Resolution No. 225 of 2011) regarding pension protection under Section 56(4) of the Municipal Act. Has no association with the Vishwa Leader publishing house."
-            }
-        };
-
-        function selectProfile(profileId) {
-            const data = registryData[profileId];
-            const card = document.getElementById('profileCard');
-
-            // Fade out
-            card.classList.add('opacity-0', 'translate-y-1');
-
-            setTimeout(() => {
-                // Update DOM Elements
-                document.getElementById('profileName').textContent = data.name;
-                document.getElementById('profileRegion').textContent = data.region;
-                document.getElementById('profileAffiliation').textContent = data.affiliation;
-                document.getElementById('profileRole').textContent = data.desc;
-
-                const badge = document.getElementById('profileBadge');
-                badge.textContent = data.badge;
-                badge.className = "absolute top-0 right-0 text-[9px] font-extrabold uppercase tracking-widest px-3 py-1 " + data.badgeClass;
-
-                // Reset active button styles
-                const buttons = ['director', 'financial', 'municipal'];
-                buttons.forEach(btn => {
-                    const buttonEl = document.getElementById('btn-' + btn);
-                    if (btn === profileId) {
-                        buttonEl.className = "w-full text-xs font-bold uppercase tracking-wider py-3 px-4 rounded text-center transition-all bg-white text-zinc-900 shadow-sm";
-                    } else {
-                        buttonEl.className = "w-full text-xs font-bold uppercase tracking-wider py-3 px-4 rounded text-center transition-all text-zinc-500 hover:text-zinc-900";
-                    }
-                });
-
-                // Fade in
-                card.classList.remove('opacity-0', 'translate-y-1');
-            }, 150);
-        }
 
         // Close mobile menu when a link is clicked
         const mobileMenuLinks = mobileMenu.querySelectorAll('a');
