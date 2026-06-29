@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishwa Leader | Document Center & Publication Archives</title>
+    <meta name="description" content="Explore and download official documents, seminar circulars, registration certificates, and the print archives of Vishwa Leader.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;950&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS Script CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBlue: '#0056CA',     // Vibrant Ambedkar Blue
+                        brandDark: '#0A1E4B',     // Deep Navy
+                        accentGold: '#D4AF37',    // Premium Gold
+                        bgGray: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617; /* Slate 950 */
+        }
+        .font-display {
+            font-family: 'Outfit', sans-serif;
+        }
+        /* Custom scrollbars */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+    </style>
+</head>
+
+<body class="selection:bg-brandBlue/30 selection:text-white min-h-screen flex flex-col antialiased text-slate-100">
+
+    <!-- Navigation Header -->
+    <header class="bg-slate-900/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="group flex items-center gap-3">
+                    <img src="wp-content/uploads/2025/02/Vishwa_Leader_Logo-removebg-preview-e1738584466936.png" 
+                         alt="Vishwa Leader Logo" 
+                         class="h-12 w-auto object-contain transition-transform group-hover:scale-105" 
+                         onerror="this.src='https://i0.wp.com/vishwaleader.com/wp-content/uploads/2025/02/Vishwa_Leader_Logo-removebg-preview-e1738584466936.png?fit=250%2C142&ssl=1'" />
+                    <span class="text-[10px] font-black tracking-widest text-brandBlue uppercase border border-brandBlue/20 px-2 py-0.5 rounded bg-brandBlue/10">
+                        Document Center
+                    </span>
+                </a>
+            </div>
+            
+            <a href="index.html" class="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white font-bold px-4 py-2 rounded-xl text-xs transition-colors uppercase tracking-wider border border-slate-700">
+                <i class="fa-solid fa-arrow-left-long"></i> Back to Website
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 md:px-6 py-8 flex flex-col lg:flex-row gap-8">
+        
+        <!-- Left Sidebar: Switcher & Items List -->
+        <section class="w-full lg:w-[400px] shrink-0 flex flex-col gap-6">
+            
+            <!-- Welcome Info -->
+            <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+                <h1 class="font-display text-xl font-black text-white">Publication Archives</h1>
+                <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                    Welcome to the Vishwa Leader Administrative & Editorial Repository. Select a resource below to read the high-fidelity preview and access direct downloads.
+                </p>
+            </div>
+
+            <!-- Tab Switcher -->
+            <div class="bg-slate-900 p-1.5 rounded-xl border border-slate-800 flex gap-2">
+                <button onclick="switchTab('pdfs')" id="tab-pdfs" class="flex-1 py-3 rounded-lg text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 bg-brandBlue text-white shadow-md">
+                    <i class="fa-solid fa-file-pdf text-sm"></i> Documents
+                </button>
+                <button onclick="switchTab('covers')" id="tab-covers" class="flex-1 py-3 rounded-lg text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 text-slate-400 hover:text-white">
+                    <i class="fa-solid fa-book-open text-sm"></i> Covers
+                </button>
+            </div>
+
+            <!-- List Containers -->
+            <div class="flex-grow overflow-y-auto max-h-[60vh] lg:max-h-[calc(100vh-340px)] pr-2 space-y-3" id="items-list">
+                <!-- Items loaded dynamically -->
+            </div>
+        </section>
+
+        <!-- Right Preview Pane -->
+        <section class="flex-grow flex flex-col bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden min-h-[500px]">
+            <!-- Active Resource Header -->
+            <div class="bg-slate-950 px-6 py-4 border-b border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <span id="preview-badge" class="text-[9px] font-extrabold uppercase px-2 py-0.5 rounded bg-brandBlue text-white tracking-wider">PDF Document</span>
+                    <h2 id="preview-title" class="font-display text-base font-bold text-white mt-1.5 leading-tight">Selecting document...</h2>
+                    <p id="preview-meta" class="text-[10px] text-slate-400 font-mono mt-1">Size: -- | Format: PDF</p>
+                </div>
+                <a id="preview-download-btn" href="#" download class="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-5 py-3 rounded-xl text-xs uppercase tracking-wider transition-all shadow-md shrink-0">
+                    <i class="fa-solid fa-download"></i> Download Resource
+                </a>
+            </div>
+
+            <!-- Viewer Area -->
+            <div class="flex-grow p-4 bg-slate-950 flex justify-center items-center relative" id="viewer-container">
+                <!-- PDF iframe viewer or Cover image viewer -->
+                <div id="viewer-placeholder" class="text-center text-slate-500 p-8">
+                    <i class="fa-solid fa-circle-notch animate-spin text-3xl text-brandBlue mb-4"></i>
+                    <p class="text-xs">Initializing secure viewer...</p>
+                </div>
+                <iframe id="pdf-frame" src="" class="hidden w-full h-full border-0 rounded-xl bg-slate-850" style="min-height: 550px; height: 100%;"></iframe>
+                <div id="image-frame" class="hidden max-w-full max-h-[70vh] flex flex-col items-center">
+                    <img id="preview-image" src="" alt="Cover Preview" class="max-w-full max-h-[60vh] object-contain rounded-lg border border-slate-800 shadow-2xl" />
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-6 mt-auto text-center text-[10px] text-slate-500 font-normal">
+        <p>© 2026 Vishwa Leader Techmedia Private Limited. All Administrative Archives are verified.</p>
+    </footer>
+
+    <!-- Script Block -->
+    <script>
+        // Archive list definitions
+        const pdfDownloadsList = [
+            {
+                file: 'awards-circular-2026.pdf',
+                title: 'Dr. Ambedkar International Awards May 2026 Circular',
+                desc: 'Official circular detailing the 2026 awards ceremony, schedule, and delegation instructions.',
+                size: '5.1 MB'
+            },
+            {
+                file: 'nomination-form-2026.pdf',
+                title: 'Application for Award Nominations',
+                desc: 'Official form to nominate candidates for the Dr. B. R. Ambedkar International Awards in London.',
+                size: '4.7 MB'
+            },
+            {
+                file: 'business-prospectus-2026.pdf',
+                title: 'International Business Summit Prospectus',
+                desc: 'Sponsorship levels, business table structures, and executive networking pathways.',
+                size: '1.4 MB'
+            },
+            {
+                file: 'lse-call-for-papers.pdf',
+                title: 'LSE Conference Call for Abstracts & Papers',
+                desc: 'Themes, submission formats, and academic panel details for the London School of Economics seminar.',
+                size: '3.0 MB'
+            },
+            {
+                file: 'event-brochure.pdf',
+                title: 'Vishwa Leader Corporate Event Brochure',
+                desc: 'Detailed corporate credentials, organizational goals, and previous social action projects.',
+                size: '3.3 MB'
+            },
+            {
+                file: 'souvenir-invitation.pdf',
+                title: 'Public Invitation for Souvenir Articles',
+                desc: 'Open invitation for write-ups, scholarly papers, and advertisement bookings.',
+                size: '970 KB'
+            },
+            {
+                file: 'advertisement-booking-form.pdf',
+                title: 'Souvenir Print Advertisement Booking Form',
+                desc: 'Pricing layout, print sizes, and booking terms for the commemorative London Summit publication.',
+                size: '1.7 MB'
+            },
+            {
+                file: 'london-itinerary.pdf',
+                title: 'Official London Tour & Seminar Itinerary',
+                desc: 'Official schedule, hotel, academic events, and sightseeing plan for all registered delegates.',
+                size: '4.7 MB'
+            },
+            {
+                file: 'summit-poster.pdf',
+                title: 'Dr. Ambedkar London Summit Event Poster',
+                desc: 'High-resolution promotional event poster with venue details and dates.',
+                size: '238 KB'
+            }
+        ];
+
+        const magazineCoversList = [
+            { src: 'December Cover 09.jpg', title: 'December 2009 Cover', date: 'Dec 2009' },
+            { src: 'Nov cover 09.jpg', title: 'November 2009 Cover', date: 'Nov 2009' },
+            { src: 'Oct Issue Cover 09.jpg', title: 'October 2009 Cover', date: 'Oct 2009' },
+            { src: 'April  Issue Cover 10.jpg', title: 'April 2010 Cover', date: 'Apr 2010' },
+            { src: 'Augst Issue Cover 10.jpg', title: 'August 2010 Cover', date: 'Aug 2010' },
+            { src: 'Feb Issue Cover10.jpg', title: 'February 2010 Cover', date: 'Feb 2010' },
+            { src: 'July Issue Cover 10.jpg', title: 'July 2010 Cover', date: 'Jul 2010' },
+            { src: 'June Issue Cover 10.jpg', title: 'June 2010 Cover', date: 'Jun 2010' },
+            { src: 'March Issue Cover 10.jpg', title: 'March 2010 Cover', date: 'Mar 2010' },
+            { src: 'May Issue Cover 10.jpg', title: 'May 2010 Cover', date: 'May 2010' },
+            { src: 'November Cover 10.jpg', title: 'November 2010 Cover', date: 'Nov 2010' },
+            { src: 'Sep Cover 10.jpg', title: 'September 2010 Cover', date: 'Sep 2010' },
+            { src: 'April  2011 Cover.jpg', title: 'April 2011 Cover', date: 'Apr 2011' },
+            { src: 'Augst  2011 Cover.jpg', title: 'August 2011 Cover', date: 'Aug 2011' },
+            { src: 'Dec 2011 Cover.jpg', title: 'December 2011 Cover', date: 'Dec 2011' },
+            { src: 'February 2011 Cover.jpg', title: 'February 2011 Cover', date: 'Feb 2011' },
+            { src: 'March  2011 Cover.jpg', title: 'March 2011 Cover', date: 'Mar 2011' },
+            { src: 'May  2011 Cover.jpg', title: 'May 2011 Cover', date: 'May 2011' },
+            { src: 'Oct  2011 Cover.jpg', title: 'October 2011 Cover', date: 'Oct 2011' },
+            { src: 'Sept  2011 Cover.jpg', title: 'September 2011 Cover', date: 'Sep 2011' },
+            { src: 'feb 2012.jpg', title: 'February 2012 Cover', date: 'Feb 2012' }
+        ];
+
+        let currentTab = 'pdfs';
+        let activeFile = '';
+        let activeCover = '';
+
+        function switchTab(tabId) {
+            currentTab = tabId;
+            const btnPdfs = document.getElementById('tab-pdfs');
+            const btnCovers = document.getElementById('tab-covers');
+            
+            if (tabId === 'pdfs') {
+                btnPdfs.className = "flex-1 py-3 rounded-lg text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 bg-brandBlue text-white shadow-md";
+                btnCovers.className = "flex-1 py-3 rounded-lg text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 text-slate-400 hover:text-white";
+                renderList(pdfDownloadsList, 'pdf');
+                // Select first PDF by default if none selected
+                if (pdfDownloadsList.length > 0) {
+                    selectPdf(pdfDownloadsList[0].file);
+                }
+            } else {
+                btnCovers.className = "flex-1 py-3 rounded-lg text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 bg-brandBlue text-white shadow-md";
+                btnPdfs.className = "flex-1 py-3 rounded-lg text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 text-slate-400 hover:text-white";
+                renderList(magazineCoversList, 'cover');
+                // Select first cover by default if none selected
+                if (magazineCoversList.length > 0) {
+                    selectCover(magazineCoversList[0].src);
+                }
+            }
+        }
+
+        function renderList(items, type) {
+            const container = document.getElementById('items-list');
+            container.innerHTML = '';
+            
+            if (type === 'pdf') {
+                items.forEach(pdf => {
+                    const isActive = activeFile === pdf.file;
+                    const cardHtml = `
+                        <div onclick="selectPdf('${pdf.file}')" 
+                             class="group border ${isActive ? 'border-brandBlue bg-brandBlue/10' : 'border-slate-800 bg-slate-900/40 hover:border-slate-750 hover:bg-slate-900/70'} p-4 rounded-xl cursor-pointer transition-all flex flex-col justify-between gap-3 shadow-sm select-none">
+                            <div>
+                                <div class="flex items-center gap-3">
+                                    <span class="w-8 h-8 rounded-lg ${isActive ? 'bg-brandBlue text-white' : 'bg-red-500/10 text-red-500'} flex items-center justify-center shrink-0 border border-red-500/20">
+                                        <i class="fa-solid fa-file-pdf text-sm"></i>
+                                    </span>
+                                    <div class="min-w-0">
+                                        <h4 class="font-bold text-white text-xs leading-tight truncate" title="${pdf.title}">${pdf.title}</h4>
+                                        <span class="text-[9px] text-slate-450 font-bold uppercase tracking-wider">${pdf.size}</span>
+                                    </div>
+                                </div>
+                                <p class="text-[10px] text-slate-400 mt-2.5 leading-relaxed font-normal">${pdf.desc}</p>
+                            </div>
+                        </div>
+                    `;
+                    container.insertAdjacentHTML('beforeend', cardHtml);
+                });
+            } else {
+                items.forEach(cover => {
+                    const isActive = activeCover === cover.src;
+                    const cardHtml = `
+                        <div onclick="selectCover('${cover.src}')" 
+                             class="group border ${isActive ? 'border-brandBlue bg-brandBlue/10' : 'border-slate-800 bg-slate-900/40 hover:border-slate-750 hover:bg-slate-900/70'} p-3 rounded-xl cursor-pointer transition-all flex items-center gap-3 shadow-sm select-none">
+                            <div class="w-10 h-12 bg-slate-800 rounded overflow-hidden shrink-0 border border-slate-700">
+                                <img src="magazine-covers/${cover.src}" alt="${cover.title}" class="w-full h-full object-cover" />
+                            </div>
+                            <div class="min-w-0">
+                                <h4 class="font-bold text-white text-xs leading-tight truncate" title="${cover.title}">${cover.title}</h4>
+                                <span class="text-[9px] text-amber-500 font-extrabold uppercase mt-0.5 block tracking-wider">${cover.date}</span>
+                            </div>
+                        </div>
+                    `;
+                    container.insertAdjacentHTML('beforeend', cardHtml);
+                });
+            }
+        }
+
+        function selectPdf(filename) {
+            activeFile = filename;
+            activeCover = '';
+            
+            // Re-render sidebar list to update active states
+            renderList(pdfDownloadsList, 'pdf');
+            
+            const pdf = pdfDownloadsList.find(p => p.file === filename);
+            if (!pdf) return;
+
+            // Update Preview Header Info
+            document.getElementById('preview-badge').textContent = 'PDF Document';
+            document.getElementById('preview-badge').className = 'text-[9px] font-extrabold uppercase px-2 py-0.5 rounded bg-brandBlue text-white tracking-wider';
+            document.getElementById('preview-title').textContent = pdf.title;
+            document.getElementById('preview-meta').textContent = `Size: ${pdf.size} | Format: PDF`;
+            
+            const downloadBtn = document.getElementById('preview-download-btn');
+            downloadBtn.href = `pdfs/${encodeURIComponent(pdf.file)}`;
+            downloadBtn.download = pdf.file;
+
+            // Update Viewer Content
+            const placeholder = document.getElementById('viewer-placeholder');
+            const pdfFrame = document.getElementById('pdf-frame');
+            const imgFrame = document.getElementById('image-frame');
+
+            placeholder.classList.remove('hidden');
+            pdfFrame.classList.add('hidden');
+            imgFrame.classList.add('hidden');
+
+            // Force load the iframe
+            pdfFrame.src = `pdfs/${encodeURIComponent(pdf.file)}`;
+            
+            pdfFrame.onload = () => {
+                placeholder.classList.add('hidden');
+                pdfFrame.classList.remove('hidden');
+            };
+        }
+
+        function selectCover(src) {
+            activeCover = src;
+            activeFile = '';
+
+            // Re-render sidebar list to update active states
+            renderList(magazineCoversList, 'cover');
+
+            const cover = magazineCoversList.find(c => c.src === src);
+            if (!cover) return;
+
+            // Update Preview Header Info
+            document.getElementById('preview-badge').textContent = 'Magazine Cover';
+            document.getElementById('preview-badge').className = 'text-[9px] font-extrabold uppercase px-2 py-0.5 rounded bg-purple-600 text-white tracking-wider';
+            document.getElementById('preview-title').textContent = cover.title;
+            document.getElementById('preview-meta').textContent = `Published: ${cover.date} | Format: JPEG Image`;
+
+            const downloadBtn = document.getElementById('preview-download-btn');
+            downloadBtn.href = `magazine-covers/${encodeURIComponent(cover.src)}`;
+            downloadBtn.download = cover.src;
+
+            // Update Viewer Content
+            const placeholder = document.getElementById('viewer-placeholder');
+            const pdfFrame = document.getElementById('pdf-frame');
+            const imgFrame = document.getElementById('image-frame');
+            const img = document.getElementById('preview-image');
+
+            placeholder.classList.remove('hidden');
+            pdfFrame.classList.add('hidden');
+            imgFrame.classList.add('hidden');
+
+            img.src = `magazine-covers/${cover.src}`;
+            img.onload = () => {
+                placeholder.classList.add('hidden');
+                imgFrame.classList.remove('hidden');
+            };
+        }
+
+        // Initialize and handle deep links via query parameters
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const targetFile = urlParams.get('file');
+            const targetCover = urlParams.get('cover');
+
+            if (targetFile) {
+                // If a PDF is requested, open the PDF tab and select the file
+                currentTab = 'pdfs';
+                activeFile = targetFile;
+                switchTab('pdfs');
+                selectPdf(targetFile);
+            } else if (targetCover) {
+                // If a cover is requested, open the cover tab and select it
+                currentTab = 'covers';
+                activeCover = targetCover;
+                switchTab('covers');
+                selectCover(targetCover);
+            } else {
+                // Default to PDF list
+                switchTab('pdfs');
+            }
+        });
+    </script>
+</body>
+</html>
