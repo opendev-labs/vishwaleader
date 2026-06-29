@@ -252,12 +252,12 @@
     </section>
 
     <!-- Magazine Covers Train Ticker Section -->
-    <section class="bg-slate-950 py-12 overflow-hidden border-b border-slate-900">
-        <div class="max-w-7xl mx-auto px-6 mb-8 text-center">
-            <span class="text-[10px] font-extrabold tracking-widest text-amber-400 uppercase bg-amber-400/10 px-3 py-1 rounded-full">Archive Timeline</span>
-            <h3 class="font-display text-2xl md:text-3xl font-black text-white mt-3">Monthly Publication Covers</h3>
-            <p class="text-slate-400 text-xs md:text-sm mt-2 max-w-2xl mx-auto">
-                Explore the legacy of Vishwa Leader through our printed issues. Hover to pause, click to preview in Document Center.
+    <section class="bg-slate-950 py-16 overflow-hidden border-b border-slate-900">
+        <div class="max-w-7xl mx-auto px-6 mb-10 text-center">
+            <span class="text-[10px] font-extrabold tracking-widest text-amber-400 uppercase bg-amber-400/10 px-3 py-1 rounded-full">Legacy Archive</span>
+            <h3 class="font-display text-2xl md:text-3xl font-black text-white mt-3">Our Historical Print Publications</h3>
+            <p class="text-slate-400 text-xs md:text-sm mt-3 max-w-3xl mx-auto leading-relaxed">
+                These editions represent our foundational years in print publishing. As we evolve and scale into digital-first global advocacy campaigns and academic forums, our physical magazine print operations are currently paused. We preserve this archive as a testament to our editorial origins.
             </p>
         </div>
         
@@ -1770,11 +1770,11 @@
                 const doubleList = [...magazineCoversList, ...magazineCoversList];
                 tickerTrack.innerHTML = doubleList.map(cover => `
                     <a href="archives.html?cover=${encodeURIComponent(cover.src)}" 
-                       class="flex-shrink-0 w-[140px] md:w-[180px] aspect-[3/4] relative group rounded-xl overflow-hidden shadow-md bg-slate-900 border border-slate-700/50 hover:border-amber-400/80 transition-all cursor-pointer">
+                       class="flex-shrink-0 w-[200px] md:w-[260px] aspect-[3/4] relative group rounded-xl overflow-hidden shadow-md bg-slate-900 border border-slate-700/50 hover:border-amber-400/80 transition-all cursor-pointer">
                         <img src="magazine-covers/${cover.src}" alt="${cover.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-3 text-left">
-                            <h4 class="text-white text-[10px] md:text-xs font-bold leading-tight font-display">${cover.title}</h4>
-                            <span class="text-amber-400 text-[8px] md:text-[9px] font-extrabold mt-0.5 uppercase tracking-wider">${cover.date}</span>
+                            <h4 class="text-white text-xs md:text-sm font-bold leading-tight font-display">${cover.title}</h4>
+                            <span class="text-amber-400 text-[9px] md:text-[10px] font-extrabold mt-1 uppercase tracking-wider">${cover.date}</span>
                         </div>
                     </a>
                 `).join('');
